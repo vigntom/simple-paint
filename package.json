@@ -9,16 +9,29 @@
   "private": true,
   "scripts": {
     "start": "rimraf dist/* && parcel src/index.html --out-dir dist --port 3000",
-    "build": "rimraf dist/* && parcel src/index/html --out-dir dist --no-source-maps --experimental-scope-hoisting"
+    "build": "rimraf dist/* && parcel src/index/html --out-dir dist --no-source-maps --experimental-scope-hoisting",
+    "test": "jest"
   },
   "dependencies": {
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
     "autoprefixer": "9.8.6",
+    "babel-jest": "^26.5.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "jest": "^26.5.3",
+    "jest-svg-transformer": "^1.0.0",
+    "jest-transform-stub": "^2.0.0",
+    "parcel-bundler": "^1.12.4",
     "postcss": "^8.1.1",
     "postcss-modules": "^3.2.2",
     "postcss-normalize": "^9.0.0",
     "postcss-preset-env": "^6.7.0",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
+    "react-test-renderer": "^16.14.0",
     "rimraf": "^3.0.2",
     "sass": "^1.27.0",
     "standard": "^14.3.4",
