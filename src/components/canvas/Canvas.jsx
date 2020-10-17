@@ -5,14 +5,15 @@ import './style.scss'
 
 export default function Canvas (params) {
   const canvasRef = useRef(null)
-  const points = createPointQueue()
+  const points = useRef(createPointQueue())
   let canvas, context, rect
 
   useEffect(() => {
     canvas = canvasRef.current
     context = canvas.getContext('2d')
     rect = canvas.getBoundingClientRect()
-  }, [])
+    points.current.setLength(params.points)
+  }, [params.points])
 
   function clickHandler (event) {
     const x = event.clientX - rect.left
@@ -21,11 +22,11 @@ export default function Canvas (params) {
 
     draw.point(context, point)
 
-    points.forEach(prevPoint => {
+    points.current.forEach(prevPoint => {
       draw.line(context, point, prevPoint)
     })
 
-    points.push(point)
+    points.current.push(point)
   }
 
   return <canvas ref={canvasRef} {...params} onClick={clickHandler} />

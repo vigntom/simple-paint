@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Canvas from './components/canvas'
 
 // function draw (context, frameCount) {
@@ -15,6 +15,16 @@ const options = {
 }
 
 export default function App () {
+  const [points, setPoints] = useState(2)
+
+  function updatePoints (event) {
+    const number = parseInt(event.target.value, 10)
+
+    if (!Number.isNaN(number)) {
+      setPoints(number)
+    }
+  }
+
   return (
     <React.StrictMode>
       <main className='page-main'>
@@ -22,7 +32,11 @@ export default function App () {
           <h1 className='visually-hidden'>Редактор</h1>
 
           <div className='canvas-container' style={options}>
-            <Canvas className='canvas' width='500' height='500' />
+            <Canvas className='canvas' width='500' height='500' points={points} />
+          </div>
+
+          <div className='canvas-configuration'>
+            <input id='canvas-points' className='canvas-points' type='number' value={points} onChange={updatePoints} />
           </div>
         </article>
       </main>
