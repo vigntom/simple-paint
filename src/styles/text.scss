@@ -1,0 +1,14 @@
+@use './settings.scss';
+
+body {
+  font-family: settings.$font-text;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.43;
+}
+
+.title {
+  margin: 0;
+  font-family: settings.$font-title;
+  font-weight: bold;
+}

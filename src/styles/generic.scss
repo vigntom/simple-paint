@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: bold;
+  src:
+    local('Open Sans Bold'),
+    local('OpenSans-Bold'),
+    url('../assets/fonts/OpenSans-Bold.woff2') format('woff2'),
+    url('../assets/fonts/OpenSans-Bold.woff') format('woff');
+  font-display: swap;
+}

@@ -1,0 +1,12 @@
+{
+  "src/**/*.css": [
+    "stylelint --fix",
+  ],
+  "src/**/*.scss": [
+    "stylelint --fix --syntax=scss",
+  ],
+  "src/**/*.js, !src/vendor/**/*.js": [
+    "standard --fix"
+  ]
+}
+

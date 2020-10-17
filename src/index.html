@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>Тестовое задание</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header__logo">
+        <picture>
+          <source type="image/webp" srcset="./assets/images/logo.webp">
+          <img src="./assets/images/logo.png" width="176" height="36" alt="Студия Олега Чулакова">
+        </picture>
+      </div>
+
+      <button class="header__hamburger-button" type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav">
+        <ul class="main-nav__list main-nav__list--main">
+          <li class="main-nav__item"><a class="main-nav__link" href="#">Первая ссылка</a></li>
+          <li class="main-nav__item"><a class="main-nav__link is-active" href="#">Вторая ссылка (активная)</a></li>
+          <li class="main-nav__item"><a class="main-nav__link" href="#">Третья ссылка</a></li>
+        </ul>
+
+        <ul class="main-nav__list main-nav__list--user">
+          <li class="main-nav__item"><a class="main-nav__link" href="#">Личный кабинет</a></li>
+          <li class="main-nav__item"><a class="main-nav__link" href="#">Выйти</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="page-main">
+      <div class="page-main__header">
+        <h1 class="title page-main__title">Заголовок страницы</h1>
+        <p class="page-main__subheader">
+          В отличие от пылевого и ионного хвостов, направление поступает
+          в лимногляциальный часовой угол
+        </p>
+      </div>
+
+      <section class="page_main__section payment">
+        <div class="payment__info payment-info">
+          <p class="payment-info__title">Информация по оплате:</p>
+
+          <ul class="payment-info__list">
+            <li class="payment-info__item">
+              <p class="payment-info__name">Номер счета:</p>
+              <p class="payment-info__value">87123658716587</p>
+            </li>
+            <li class="payment-info__item">
+              <p class="payment-info__name">Сумма платежа:</p>
+              <p class="payment-info__value">100 руб.</p>
+            </li>
+          </ul>
+        </div> <!--END payment__info -->
+
+        <h2 class="title payment__title">Данные банковской карты</h2>
+
+        <form class="payment__card payment-card" method="post" action="https://echo.htmlacademy.ru">
+          <div class="payment-card__head">
+            <fieldset class="payment-card__serial card-number">
+              <legend class="card-number__title">Номер карты</legend>
+
+              <input class="card-number__item" type="text" name="number-part1" maxlength="4">
+              <input class="card-number__item" type="text" name="number-part2" maxlength="4">
+              <input class="card-number__item" type="text" name="number-part3" maxlength="4">
+              <input class="card-number__item" type="text" name="number-part4" maxlength="4">
+            </fieldset>
+
+            <fieldset class="payment-card__expiration-date expiration-date">
+              <legend class="expiration-date__title">Срок действия</legend>
+
+              <div class="expiration-date__wrapper">
+                <select class="expiration-date__item expiration-date__item--day" name="expiration-day">
+                  <option value="1">01</option>
+                  <option value="2">02</option>
+                  <option value="3">03</option>
+                  <option value="4" selected>04</option>
+                  <option value="5">05</option>
+                  <option value="6">06</option>
+                  <option value="7">07</option>
+                  <option value="8">08</option>
+                  <option value="9">09</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">24</option>
+                  <option value="25">25</option>
+                  <option value="26">26</option>
+                  <option value="27">27</option>
+                  <option value="28">28</option>
+                  <option value="29">29</option>
+                  <option value="30">30</option>
+                  <option value="31">31</option>
+                </select> <!--END expiration-date__item -->
+
+                <select class="expiration-date__item expiration-date__item--year" name="expiration-year">
+									<option value="2012">2020</option>
+									<option value="2012">2019</option>
+									<option value="2012" selected>2018</option>
+									<option value="2012">2017</option>
+									<option value="2012">2016</option>
+									<option value="2012">2015</option>
+									<option value="2012">2014</option>
+									<option value="2012">2013</option>
+									<option value="2011">2011</option>
+									<option value="2010">2010</option>
+									<option value="2009">2009</option>
+									<option value="2008">2008</option>
+									<option value="2007">2007</option>
+									<option value="2006">2006</option>
+									<option value="2005">2005</option>
+									<option value="2004">2004</option>
+									<option value="2003">2003</option>
+									<option value="2002">2002</option>
+									<option value="2001">2001</option>
+									<option value="2000">2000</option>
+                </select> <!-- END expiration-date__item -->
+              </div>
+            </fieldset>
+
+            <input class="payment-card__cardholder" type="text" name="cardholder" placeholder="Держатель карты">
+          </div> <!-- END payment-card__head -->
+
+          <div class="payment-card__tail">
+            <label for="card-code" class="payment-card__code-title">Код CVV2 / CVC2</label>
+
+            <div class="button-icon__wrapper">
+              <input id="card-code" class="payment-card__code" type="text" name="code" maxlength="3">
+
+              <button class="payment-card__help button-icon button-icon--question" type="button">
+                <span class="visually-hidden">Где найти</span>
+              </button>
+            </div>
+          </div>
+
+          <button class="payment-card__pay-button button" type="submit">Оплатить</button>
+        </form>
+      </section> <!-- END page_main__section payment -->
+
+      <section class="page_main__section payment-terms">
+        <h2 class="visually-hidden">Условия использования</h2>
+
+        <p class="payment-terms__text">
+          Исходя из астатической системы координат Булгакова, соединение стабильно.
+          Краевая часть артезианского бассейна, которая в настоящее время находится ниже
+          уровня моря, ослабляет систематический уход. Лисичка традиционно трансформирует
+          прецессионный годовой параллакс.
+        </p>
+
+        <p class="payment-terms__text">
+          Выклинивание абсолютно аккумулирует твердый pадиотелескоп Максвелла.
+        </p>
+
+        <p class="payment-terms__text">
+          Алмаз слагает горст. Делювий длительно колеблет лазерный подвижный объект.
+        </p>
+
+        <p class="payment-terms__text">
+          Устойчивость, например, параллельна. Аргумент перигелия определяет боксит.
+          Проекция вертикально дает уходящий диабаз. Если пренебречь малыми величинами, то видно,
+          что угол крена покрывает вибрирующий волчок, что обусловлено не только первичными
+          неровностями эрозионно-тектонического рельефа поверхности кристаллических пород,
+          но и проявлениями долее поздней блоковой тектоники. Засветка неба заставляет иначе
+          взглянуть на то, что такое волчок.
+        </p>
+      </section> <!-- END page_main__section payment-terms -->
+    </main>
+  </div> <!-- END container -->
+  <script src="index.js"></script>
+</body>
+</html>

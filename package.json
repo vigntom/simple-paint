@@ -1,0 +1,27 @@
+{
+  "name": "simple-paint",
+  "version": "0.0.1",
+  "description": "Простой графический редактор",
+  "main": "index.js",
+  "repository": "git@github.com:vigntom/simple-paint.git",
+  "author": "Aleksandr Ignatev <vigntom@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "autoprefixer": "9.8.6",
+    "postcss": "^8.1.1",
+    "postcss-modules": "^3.2.2",
+    "postcss-normalize": "^9.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "rimraf": "^3.0.2",
+    "sass": "^1.27.0",
+    "standard": "^14.3.4",
+    "stylelint": "^13.7.2",
+    "stylelint-config-property-sort-order-smacss": "^6.3.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-config-standard-scss": "^1.1.0",
+    "stylelint-scss": "^3.18.0"
+  }
+}
