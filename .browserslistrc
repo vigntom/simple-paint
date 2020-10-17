@@ -1,5 +1,3 @@
 defaults
-IE >= 10
-Chrome >= 40
-Firefox >= 40
-Safari >= 8
+not IE 11
+not IE_Mob 11
