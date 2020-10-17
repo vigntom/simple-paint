@@ -19,7 +19,7 @@ export default function App () {
     <React.StrictMode>
       <main className='page-main'>
         <article className='canvas-editor'>
-          <h1 className='title'>Редактор</h1>
+          <h1 className='visually-hidden'>Редактор</h1>
 
           <div className='canvas-container' style={options}>
             <Canvas className='canvas' width='500' height='500' />
