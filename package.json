@@ -7,6 +7,10 @@
   "author": "Aleksandr Ignatev <vigntom@gmail.com>",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "start": "rimraf dist/* && parcel src/index.html --out-dir dist --port 3000",
+    "build": "rimraf dist/* && parcel src/index/html --out-dir dist --no-source-maps --experimental-scope-hoisting"
+  },
   "dependencies": {
     "autoprefixer": "9.8.6",
     "postcss": "^8.1.1",
