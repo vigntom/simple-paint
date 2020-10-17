@@ -17,7 +17,8 @@ function point (ctx, point) {
     const currentTime = new Date()
     const delta = currentTime - startTime
 
-    if (delta >= duration) {
+    if (delta > duration) {
+      createPoint(ctx, point, pointSize)
       return window.cancelAnimationFrame(animationFrameId)
     }
 
@@ -31,9 +32,9 @@ function point (ctx, point) {
   render()
 }
 
-function line (ctx, point1, point2) {
-  const color = '#bada55'
+function createLine (ctx, point1, point2) {
   const lineWidth = 3
+  const color = '#bada55'
 
   ctx.strokeStyle = color
   ctx.lineWidth = lineWidth
@@ -42,6 +43,34 @@ function line (ctx, point1, point2) {
   ctx.moveTo(...point1)
   ctx.lineTo(...point2)
   ctx.stroke()
+}
+
+function line (ctx, point1, point2) {
+  const duration = 500
+  const startTime = new Date()
+  const dX = point2[0] - point1[0]
+  const dY = point2[1] - point1[1]
+  const xDelta = dX / duration
+  const yDelta = dY / duration
+  let animationFrameId
+
+  function render () {
+    const currentTime = new Date()
+    const delta = currentTime - startTime
+
+    if (delta > duration) {
+      createLine(ctx, point1, point2)
+      return window.cancelAnimationFrame(animationFrameId)
+    }
+
+    const newPoint = [point1[0] + xDelta * delta, point1[1] + yDelta * delta]
+
+    createLine(ctx, point1, newPoint)
+
+    animationFrameId = window.requestAnimationFrame(render)
+  }
+
+  return render()
 }
 
 export default {
