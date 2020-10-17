@@ -16,14 +16,16 @@ const options = {
 
 export default function App () {
   return (
-    <main className='page-main'>
-      <article className='canvas-editor'>
-        <h1 className='title'>Редактор</h1>
+    <React.StrictMode>
+      <main className='page-main'>
+        <article className='canvas-editor'>
+          <h1 className='title'>Редактор</h1>
 
-        <div className='canvas-container' style={options}>
-          <Canvas className='canvas' width='500' height='500' />
-        </div>
-      </article>
-    </main>
+          <div className='canvas-container' style={options}>
+            <Canvas className='canvas' width='500' height='500' />
+          </div>
+        </article>
+      </main>
+    </React.StrictMode>
   )
 }
