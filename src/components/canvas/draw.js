@@ -1,16 +1,19 @@
-function createPoint (ctx, point, pointSize) {
-  const color = '#ff2626'
+function createRgbaColor (color) {
+  return `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`
+}
 
+function createPoint (ctx, point, pointSize, color) {
   ctx.fillStyle = color
   ctx.beginPath()
   ctx.arc(...point, pointSize, 0, Math.PI * 2, true)
   ctx.fill()
 }
 
-function point (ctx, point) {
+function point (ctx, point, colorOption) {
   const pointSize = 10
   const duration = 300
   const startTime = new Date()
+  const color = createRgbaColor(colorOption) // '#ff2626'
   let animationFrameId
 
   function render () {
@@ -18,13 +21,13 @@ function point (ctx, point) {
     const delta = currentTime - startTime
 
     if (delta > duration) {
-      createPoint(ctx, point, pointSize)
+      createPoint(ctx, point, pointSize, color)
       return window.cancelAnimationFrame(animationFrameId)
     }
 
     const size = delta * pointSize / duration
 
-    createPoint(ctx, point, size)
+    createPoint(ctx, point, size, color)
 
     animationFrameId = window.requestAnimationFrame(render)
   }

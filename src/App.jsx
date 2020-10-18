@@ -1,21 +1,12 @@
 import React, { useState } from 'react'
 import Canvas from './components/canvas'
-
-// function draw (context, frameCount) {
-//   context.clearRect(0, 0, context.canvas.width, context.canvas.height)
-//   context.fillStyle = '#fc213b'
-//   context.beginPath()
-//   context.arc(50, 100, 20 * Math.sin(frameCount * 0.05) ** 2, 0, 2 * Math.PI)
-//   context.fill()
-// }
-
-const options = {
-  width: '500px',
-  height: '500px'
-}
+import Configuration from './components/configuration'
+import './components/form-element'
+import './App.scss'
 
 export default function App () {
   const [points, setPoints] = useState(2)
+  const [color, setColor] = useState({ r: 0, g: 0, b: 0, a: 1 })
 
   function updatePoints (event) {
     const number = parseInt(event.target.value, 10)
@@ -25,20 +16,33 @@ export default function App () {
     }
   }
 
+  function updateColor (color) {
+    setColor(color)
+  }
+
   return (
     <React.StrictMode>
       <main className='page-main'>
         <article className='canvas-editor'>
           <h1 className='visually-hidden'>Редактор</h1>
 
-          <div className='canvas-container' style={options}>
-            <Canvas className='canvas' width='500' height='500' points={points} />
-          </div>
-
-          <div className='canvas-configuration'>
-            <input id='canvas-points' className='canvas-points' type='number' value={points} onChange={updatePoints} />
+          <div className='canvas-container'>
+            <Canvas
+              className='canvas'
+              width='500'
+              height='500'
+              points={points}
+              color={color}
+            />
           </div>
         </article>
+
+        <Configuration
+          points={points}
+          color={color}
+          updatePoints={updatePoints}
+          updateColor={updateColor}
+        />
       </main>
     </React.StrictMode>
   )

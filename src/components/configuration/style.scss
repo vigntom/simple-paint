@@ -1,0 +1,13 @@
+$color-black: #000;
+
+.configuration {
+  align-self: stretch;
+  margin-left: 30px;
+  padding: 20px;
+  border: 2px solid rgba($color-black, 0.3);
+  border-radius: 5px;
+}
+
+.configuration-colors {
+  margin-top: 10px;
+}
