@@ -9,7 +9,7 @@
   "private": true,
   "scripts": {
     "start": "rimraf dist/* && parcel src/index.html --out-dir dist --port 3000",
-    "build": "rimraf dist/* && parcel src/index/html --out-dir dist --no-source-maps --experimental-scope-hoisting",
+    "build": "rimraf dist/* && parcel build src/index.html --out-dir dist --no-source-maps",
     "test": "jest"
   },
   "dependencies": {
